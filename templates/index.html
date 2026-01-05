@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-heartbeat pulse"></i>
+                <h2>HealthCare AI</h2>
+            </div>
+            <div class="sidebar-menu">
+                <div class="menu-item active">
+                    <i class="fas fa-comment-medical"></i>
+                    <span>Chat</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-history"></i>
+                    <span>History</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </div>
+            </div>
+            <div class="sidebar-footer">
+                <div class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="chat-header">
+                <div class="chat-title">
+                    <h2>AI Health Assistant</h2>
+                    <span class="status online">Online</span>
+                </div>
+                <div class="chat-actions">
+                    <button class="btn-clear" id="clearChat">
+                        <i class="fas fa-trash-alt"></i>
+                        <span>Clear Chat</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-container">
+                <div class="messages" id="messages">
+                    <!-- Messages will be added here dynamically -->
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <textarea id="userInput" placeholder="Describe your symptoms..." rows="1"></textarea>
+                    <button id="sendBtn" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="input-features">
+                    <span class="feature-hint">Press Enter to send</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="info-header">
+                <h3>Health Insights</h3>
+                <button class="btn-close-panel">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="info-content">
+                <div class="info-section" id="diagnosisInfo">
+                    <h4>Your Diagnosis</h4>
+                    <div class="placeholder-content">
+                        <p>Complete the chat to get your diagnosis</p>
+                    </div>
+                </div>
+                <div class="info-section">
+                    <h4>Health Tips</h4>
+                    <ul class="health-tips">
+                        <li><i class="fas fa-check-circle"></i> Stay hydrated throughout the day</li>
+                        <li><i class="fas fa-check-circle"></i> Get 7-8 hours of sleep daily</li>
+                        <li><i class="fas fa-check-circle"></i> Exercise for at least 30 minutes</li>
+                        <li><i class="fas fa-check-circle"></i> Maintain a balanced diet</li>
+                    </ul>
+                </div>
+                <div class="info-section">
+                    <h4>About This Tool</h4>
+                    <p>This AI-powered health assistant uses machine learning to analyze symptoms and provide potential diagnoses. Always consult with a healthcare professional for medical advice.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Templates for message bubbles -->
+    <template id="user-message-template">
+        <div class="message user-message">
+            <div class="message-content">
+                <p></p>
+            </div>
+            <div class="message-info">
+                <span class="message-time"></span>
+            </div>
+        </div>
+    </template>
+
+    <template id="bot-message-template">
+        <div class="message bot-message">
+            <div class="avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="message-content">
+                <p></p>
+            </div>
+            <div class="message-info">
+                <span class="message-time"></span>
+            </div>
+        </div>
+    </template>
+
+    <template id="typing-indicator-template">
+        <div class="message bot-message typing">
+            <div class="avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="message-content">
+                <div class="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
