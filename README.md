@@ -1,6 +1,5 @@
 # AI-Health-Chatbot
 
-<img width="1280" height="720" alt="SQL_Thumbnail (15)" src="https://github.com/user-attachments/assets/4634155d-c0d2-44bd-8f62-bfd6d8b2375c" />
 
 💡 Ever wondered if Artificial Intelligence can act like a doctor? In this video, I’ll show you how I built an AI-powered Healthcare Chatbot that can predict diseases from symptoms using Machine Learning in Python. 🚑
 We’ll go step by step:
@@ -25,7 +24,5 @@ Integrate AI into a user-friendly healthcare solution
 📌 Technologies used: Python, Scikit-learn, Pandas, NLP, Machine Learning
 
 💬 If you’re a beginner in ML/AI, this project will help you understand how to turn an idea into a working application.
-
-🔔 Subscribe for more AI, ML, and Python projects: @souvikchai
 
 📢 Share this project with your friends who are into Data Science & Healthcare AI!
